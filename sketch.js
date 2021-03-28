@@ -71,58 +71,65 @@ function draw() {
 
 function menu() {
 
-  image(menuimage, 300, 60, 400, 300)
+  image(menuimage, 250, 60, 500, 400)
 
   noStroke()
 
   fill(txtprimary)
   textSize(40)
   textAlign(CENTER)
-  text('MÉDIA NA PRÁTICA', 250, 200)
+  text('MÉDIA NA PRÁTICA', 280, 200)
 
   fill(btnprimary)
   stroke(25);
-  rect(168, 250, 130, 80)
+  rect(168, 250, 200, 80, 10)
 
   noStroke()
   fill(txtprimary)
   textSize(35)
-  text("Aperte ENTER para jogar", 260, 300)
+  text("JOGAR", 270, 300)
 
   textSize(25)
   fill(btnsecondary)
   stroke(1)
-  rect(60, 520, 135, 55, 20)
+  rect(200, 400, 135, 55, 10)
   noStroke()
   fill(txtsecondary)
-  text("Créditos", 120, 560)
+  text("Créditos", 270, 435)
 
 
   if (creditsPopup) {
 
     fill(bg)
     stroke(25)
-    rect(65, 150, 620, 300)
+    rect(65, 100, 700, 380)
 
     textAlign(LEFT)
     fill(txtprimary)
     stroke(0.5)
-    text('Desenvolvedores', 80, 200)
+    text('Desenvolvedores', 80, 170)
+    
+    textSize(20)
+    textAlign(LEFT)
+    fill(txtprimary)
+    text('X', 730, 130)
 
     noStroke()
     textSize(20)
-    text('Raphael Ramos da Silva - graduando em CeT ', 80, 250)
-    text('Orientador: Thiago Valentim M., professor de Matemática do IFRN', 80, 280)
+    text('Raphael Ramos da Silva - graduando em Ciências e Tecnologia ', 80, 220)
+    text('Aquiles Medeiros F. Burlamaqui - prof. de Lógica de Programação da UFRN', 80, 250)
+    text('Thiago Valentim M. - prof. de Matemática do IFRN', 80, 280)
 
+    
     textSize(25)
     stroke(0.5)
     text('Sobre', 80, 330)
 
     noStroke()
     textSize(20)
-    text('Ano: 8° ano do fundamental', 80, 360)
-    text('Esse jogo educativo procura desenvolver a habilidade EF08MA25', 80, 390)
-    text('presente na Base Nacional Comum Curricular.', 80, 420)
+    text('Ano: 8° ano do fundamental', 80, 370)
+    text('Esse jogo educativo procura desenvolver a habilidade EF08MA25', 80, 400)
+    text('presente na Base Nacional Comum Curricular.', 80, 430)
 
   }
 
@@ -504,7 +511,7 @@ function mouseClicked() {
 
     case 'menu':
 
-      if ((mouseX > 60 && mouseX < 250) && (mouseY > 520 && mouseY < 600) && creditsPopup == false) {
+      if ((mouseX > 200 && mouseX < 350) && (mouseY > 400 && mouseY < 600) && creditsPopup == false) {
         creditsPopup = true
       } else {
         creditsPopup = false
