@@ -1,3 +1,6 @@
+// http://www.colabeduc.org/descricao/show/379
+// https://www.youtube.com/watch?v=VxHbR8qR8H4 
+
 // Interface
 
 blockColors  = ["#59CD90","#EE6352","#3FA7D6","#FBF24C","#BDBDBD"]
@@ -33,7 +36,7 @@ function preload() {
   
   soundFormats('mp3', 'wav');
   putBlocks = loadSound('assets/sounds/putblocks.wav');
-  chalengecompleted = loadSound('assets/sounds/challengecompleted.mp3');
+  //chalengecompleted = loadSound('assets/sounds/challengecompleted.mp3');
   
   
   // Images
@@ -109,7 +112,7 @@ function menu() {
     noStroke()
     textSize(20)
     text('Raphael Ramos da Silva - graduando em CeT ', 80, 250)
-    text('Aquiles Medeiros F. Burlamanqui - professor da ECT, UFRN ', 80, 280)
+    text('Orientador: Thiago Valentim M., professor de Matemática do IFRN', 80, 280)
 
     textSize(25)
     stroke(0.5)
@@ -117,8 +120,9 @@ function menu() {
 
     noStroke()
     textSize(20)
-    text('Esse jogo educativo procura desenvolver a habilidade EF08MA25', 80, 360)
-    text('presente na Base Nacional Comum Curricular.', 80, 390)
+    text('Ano: 8° ano do fundamental', 80, 360)
+    text('Esse jogo educativo procura desenvolver a habilidade EF08MA25', 80, 390)
+    text('presente na Base Nacional Comum Curricular.', 80, 420)
 
   }
 
@@ -436,7 +440,7 @@ function checkChallenge(){
    else if(countChallenge = 2){
      if(median >= startMedianRange && median <= finalMedianRange){
        countChallenge++
-       chalengecompleted.play()
+       //chalengecompleted.play()
      }
    }
   
@@ -514,7 +518,7 @@ function mouseClicked() {
       
       if((mouseX > 430 && mouseX < 580) && (mouseY > 82 && mouseY < 150)){
         
-        chalengecompleted.stop()
+        //chalengecompleted.stop()
         
         mean   = 0
         median = 0
