@@ -935,11 +935,11 @@ function game() {
   for(i = 0; i < rol.length; i++){
     
     if(i == rol.length-1){
-      text(rol[rol.length -1] + ".", 100 + (45*i), 510)
+      text(rol[rol.length -1] + ".", 100 + (50*i), 510)
     }
     
     else {
-      text(rol[i] + ", ", 100 + (45*i), 510)  
+      text(rol[i] + ", ", 100 + (50*i), 510)  
     }
   }
   
