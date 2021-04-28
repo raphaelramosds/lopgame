@@ -49,7 +49,7 @@ function preload() {
   soundFormats('mp3', 'wav');
   putBlocks = loadSound('assets/sounds/putblocks.wav');
   chalengecompleted = loadSound('assets/sounds/claps.mp3');
-  backg = loadSound("assets/sounds/kahoot.mp3")
+  backg = loadSound('assets/sounds/clearday.mp3');
   
   
   // Images
@@ -62,7 +62,7 @@ function setup() {
   createCanvas(800, 600)
   
   // Evaluete tasks
-  backg.loop()
+  //backg.loop()
   updateChallenge()
   
 }
@@ -461,7 +461,7 @@ function checkChallenge(){
    else if(countChallenge = 2){
      if(median >= startMedianRange && median <= finalMedianRange){
        countChallenge++
-       backg.stop()
+       //backg.stop()
        if(!soundIsPlaying){
          chalengecompleted.play() 
          soundIsPlaying = true
@@ -544,7 +544,7 @@ function mouseClicked() {
       if((mouseX > 430 && mouseX < 580) && (mouseY > 82 && mouseY < 150)){
         
         soundIsPlaying = false
-        backg.loop()
+        //backg.loop()
         
         mean   = 0
         median = 0
@@ -677,7 +677,7 @@ function preload() {
   soundFormats('mp3', 'wav');
   putBlocks = loadSound('assets/sounds/putblocks.wav');
   chalengecompleted = loadSound('assets/sounds/claps.mp3');
-  backg = loadSound("assets/sounds/kahoot.mp3")
+  //backg = loadSound("assets/sounds/clearday.mp3")
   
   
   // Images
@@ -690,7 +690,7 @@ function setup() {
   createCanvas(800, 600)
   
   // Evaluete tasks
-  backg.loop()
+  //backg.loop()
   updateChallenge()
   
 }
@@ -1118,7 +1118,7 @@ function checkChallenge(){
    else if(countChallenge = 2){
      if(median >= startMedianRange && median <= finalMedianRange){
        countChallenge++
-       backg.stop()
+       //backg.stop()
        if(!soundIsPlaying){
          chalengecompleted.play() 
          soundIsPlaying = true
@@ -1202,7 +1202,7 @@ function mouseClicked() {
       if((mouseX > 430 && mouseX < 580) && (mouseY > 82 && mouseY < 150)){
         
         soundIsPlaying = false
-        backg.loop()
+        //backg.loop()
         
         mean   = 0
         median = 0
