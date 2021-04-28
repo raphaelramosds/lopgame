@@ -40,6 +40,7 @@ mode   = 0
 
 index         = 0
 blockheight   = 100
+rol = []
 blocks        = []
 selectedBlock = null
 
@@ -57,8 +58,6 @@ function preload() {
 }
 
 function setup() {
-
-  background('lightgrey')
   
   createCanvas(800, 600)
   
@@ -904,8 +903,20 @@ function game() {
   rect(680, 550, 100, 40)
   textSize(24)
   fill(txtprimary)
-  text("? Ajuda", 730, 580)
-
+  
+  stroke(0.5)
+  fill('white')
+  circle(730,580, 35)
+  fill(txtprimary)
+  noStroke()
+  text("?", 730, 590)
+  
+  
+  stroke(1)
+  fill(btnprimary)
+  rect(10, 550, 120, 40, 10)
+  fill(txtprimary)
+  noStroke()
   text(blockheight + " cm", 70, 575)
 
   stroke(1)
@@ -916,6 +927,23 @@ function game() {
   fill(txtprimary)
   text("Colocar bloco", 300, 580)
 
+  fill(txtprimary)
+  stroke(0.5)
+  text("Rol: ", 55, 510)
+  noStroke()
+  
+  for(i = 0; i < rol.length; i++){
+    
+    if(i == rol.length-1){
+      text(rol[rol.length -1] + ".", 100 + (45*i), 510)
+    }
+    
+    else {
+      text(rol[i] + ", ", 100 + (45*i), 510)  
+    }
+  }
+  
+  
   stroke(1)
   fill(btnprimary)
   rect(180, 547, 30, 40, 10)
@@ -973,7 +1001,7 @@ function showBlocks() {
 
 function showStatistics() {
 
-  rol = []
+  
 
   mean = 0.0
   sum = 0
@@ -1021,9 +1049,9 @@ function showStatistics() {
   }
 
   // Mode
-
-  mode = console.log(countValues(rol));
-
+  
+  //mode = console.log(countValues(rol));
+  
 
   // Spread 
 
@@ -1138,6 +1166,7 @@ function keyPressed() {
 
   if (key == 'Escape') {
 
+    rol    = []
     blocks = []
     index  = 0
     mean   = 0
@@ -1178,6 +1207,7 @@ function mouseClicked() {
         mean   = 0
         median = 0
         spread = 0
+        rol   = []
         blocks = []
         index  = 0
         
@@ -1212,6 +1242,7 @@ function mouseClicked() {
       // Save blocks on array and show them
       if ((mouseX > 220 && mouseX < 390) && (mouseY > 550 && mouseY < 600)) {
         
+        
         putBlocks.play()
         
         // The system only shows 10 blocks
@@ -1229,13 +1260,14 @@ function mouseClicked() {
             y: posY,
             color: blockColors[getRndInteger(0,4)] 
           })
-
-
+          
+          rol = []
+          
+          showStatistics()
+          
           index += 1
 
         }
-
-        showStatistics()
 
       }
 
@@ -1267,7 +1299,8 @@ function mouseClicked() {
             posX = posX - (55 + 80 * index);
 
           }
-
+          
+          rol = []
           showStatistics()
         }
       }
